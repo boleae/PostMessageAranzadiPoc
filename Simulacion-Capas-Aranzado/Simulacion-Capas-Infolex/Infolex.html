@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ventana Secundaria</title>
+</head>
+<body>
+    <button id="sendJsonBtn">Enviar JSON</button>
+    <script>document.getElementById('sendJsonBtn').addEventListener('click', function() {
+            const jsonData = {
+                nombre: "Juan",
+                edad: 30,
+                ocupacion: "Desarrollador"
+            };
+
+            // Enviar el mensaje a la ventana padre
+            window.opener.postMessage(jsonData, 'https://localhost:44301/Aranzadi.html');
+
+            // Cerrar la ventana actual
+            window.close();
+    });
+  </script>
+
+</body>
+</html>
